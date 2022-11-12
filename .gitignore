@@ -3,3 +3,4 @@
 /api/db.sqlite3
 /frontend/node_modules/
 /venv_2/
+/.idea/
