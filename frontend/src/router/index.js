@@ -11,12 +11,12 @@ const routes = [
     component: Login
   },
   {
-    path: '/',
+    path: '/profile',
     name: 'ProfileView',
     component: ProfileView
   },
   {
-    path: '/',
+    path: '/chat',
     name: 'ChatView',
     component: ChatView
   },

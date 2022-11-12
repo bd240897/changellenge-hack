@@ -19,17 +19,17 @@
             </button>
 
           </form>
-          <div class="my-2">
-            <button v-on:click.prevent="isTokenValid" class="login__button btn btn-primary w-100" type="submit">
-              Проверить валидность токена
-            </button>
-          </div>
+<!--          <div class="my-2">-->
+<!--            <button v-on:click.prevent="isTokenValid" class="login__button btn btn-primary w-100" type="submit">-->
+<!--              Проверить валидность токена-->
+<!--            </button>-->
+<!--          </div>-->
 
-          <div class="my-2">
-            <button v-on:click.prevent="getUserInfo" class="login__button btn btn-primary w-100" type="submit">
-              Проверить axios.default
-            </button>
-          </div>
+<!--          <div class="my-2">-->
+<!--            <button v-on:click.prevent="getUserInfo" class="login__button btn btn-primary w-100" type="submit">-->
+<!--              Проверить axios.default-->
+<!--            </button>-->
+<!--          </div>-->
 
         </div>
       </div>
@@ -52,15 +52,22 @@ export default {
     }
   },
   methods: {
-    ...mapActions('login', ['isTokenValid', "login", "getUserInfo"]),
+    ...mapActions('login', ['isTokenValid', "login",]),
     hash(string) {
       return CryptoJS.SHA256(string).toString(CryptoJS.enc.hex);
     },
     getLogin() {
-      let data_login_global = {
+            // TODO
+      let data_login = {
         "login": this.username,
         "password": this.hash(this.password)
       }
+      let data_login_global = {
+        "login": "testUser",
+        "password": "872e4e50ce9990d8b041330c47c9ddd11bec6b503ae9386a99da8584e9bb12c4"
+      }
+
+
       console.log(data_login_global)
       this.login({data: data_login_global})
     },
