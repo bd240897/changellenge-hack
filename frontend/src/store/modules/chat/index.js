@@ -10,7 +10,7 @@ export default ({
     getters: {},
     mutations: {
         SET_CHAT_HISTORY(state, chatHistory) {
-            state.chatHistory = chatHistory
+            state.chatHistory = chatHistory.reverse()
         },
     },
     actions: {

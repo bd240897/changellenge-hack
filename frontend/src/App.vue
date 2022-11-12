@@ -1,12 +1,11 @@
 <template>
 <!--  <PageLoader />-->
-  <nav>
-    <router-link :to="{ name: 'Login'}">Login</router-link> |
-    <router-link :to="{ name: 'ProfileView'}">ProfileView</router-link> |
-<!--    <router-link :to="{ name: 'RequestDetail', params: { id: 1 }}">Request</router-link> |-->
-    <router-link :to="{ name: 'ChatView'}">ChatView</router-link> |
-    <router-link :to="{ name: 'TestView', params: { id: 1 }}">TestView</router-link> |
-  </nav>
+<!--  <nav>-->
+<!--    <router-link :to="{ name: 'Login'}">Login</router-link> |-->
+<!--    <router-link :to="{ name: 'ProfileView'}">ProfileView</router-link> |-->
+<!--    <router-link :to="{ name: 'ChatView'}">ChatView</router-link> |-->
+<!--    <router-link :to="{ name: 'TestView', params: { id: 1 }}">TestView</router-link> |-->
+<!--  </nav>-->
   <router-view/>
 </template>
 

@@ -16,7 +16,7 @@
 
 
       <div class="chat_body d-flex flex-column align-items-start mt-5">
-        <div v-for="msg in chatHistory.reverse()" class="massage_item"
+        <div v-for="msg in chatHistory" class="massage_item"
              v-bind:class="[ isMyMassage(msg.sender) ? 'massage_item--client' : 'massage_item--expert']">
           {{ msg.text }}
         </div>
@@ -50,7 +50,6 @@ export default {
       massage: '',
     }
   },
-  watch: {},
   computed: {
     ...mapState('chat', ['chatHistory',]),
     ...mapState('profile', ['id_dialog', "userInfo"]),
@@ -58,9 +57,6 @@ export default {
   methods: {
     ...mapActions('chat', ['getChatHistory', 'sendMassage']),
     isMyMassage(id) {
-      console.log(parseInt(id) === this.userInfo.userId)
-      console.log(parseInt(id))
-      console.log(this.userInfo.userId)
       return parseInt(id) === this.userInfo.userId
     },
     sendNewMassage() {
