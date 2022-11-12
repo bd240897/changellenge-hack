@@ -25,13 +25,6 @@ export default {
     window.addEventListener('resize', this.updateWidth);
   },
   methods: {
-    // isMobile() {
-    //   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    //     return true
-    //   } else {
-    //     return false
-    //   }
-    // },
     updateWidth() {
       this.width = window.innerWidth;
     },

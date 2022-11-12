@@ -1,11 +1,10 @@
 <template>
   <nav>
-<!--    <router-link :to="{ name: 'Login'}">Login</router-link> |-->
+    <router-link :to="{ name: 'Login'}">Login</router-link> |
 <!--    <router-link :to="{ name: 'RequestCreate'}">CreateRequest</router-link> |-->
 <!--    <router-link :to="{ name: 'RequestDetail', params: { id: 1 }}">Request</router-link> |-->
 <!--    <router-link :to="{ name: 'RequestList'}">RequestList</router-link> |-->
-<!--    <router-link :to="{ name: 'TestView', params: { id: 1 }}">TestView</router-link> |-->
-    <Menu/>
+    <router-link :to="{ name: 'TestView', params: { id: 1 }}">TestView</router-link> |
   </nav>
   <router-view/>
 </template>
@@ -31,8 +30,9 @@ import Menu from '@/components/Menu.vue';
 export default {
   name: 'App',
   components: {
-    Menu,
   },
+  created() {
+  }
 }
 </script>
 

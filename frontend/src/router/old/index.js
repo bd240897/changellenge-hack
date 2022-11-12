@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../views/Login.vue'
+import RequestList from '../views/RequestList.vue'
+import RequestDetail from '../views/RequestDetail.vue'
+import RequestCreate from '../views/RequestCreate.vue'
 import TestView from "../views/TestView";
-import ProfileView from "@/views/ProfileView";
-import ChatView from "@/views/ChatView";
 
 const routes = [
   {
@@ -11,14 +12,19 @@ const routes = [
     component: Login
   },
   {
-    path: '/',
-    name: 'ProfileView',
-    component: ProfileView
+    path: '/request/list',
+    name: 'RequestList',
+    component: RequestList
   },
   {
-    path: '/',
-    name: 'ChatView',
-    component: ChatView
+    path: '/request/look/:id',
+    name: 'RequestDetail',
+    component: RequestDetail
+  },
+  {
+    path: '/request/create',
+    name: 'RequestCreate',
+    component: RequestCreate
   },
   {
   path: '/test/:id',

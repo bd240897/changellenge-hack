@@ -1,16 +1,19 @@
 import { createStore } from 'vuex'
-import request_list from "./modules/request_list/";
-import request_detail from "./modules/request_detail/";
 import login from "./modules/login/";
-import request_create from "./modules/request_create/";
+import chat from "./modules/chat/";
+import profile from "./modules/profile/";
 
 export default createStore({
   state() {
     return {
-      id_request: '18',
-      URL_BACKEND_GET_IMG: 'http://127.0.0.1:8000/api/receive/source/',
-      URL_BACKEND_SEND_IMG: 'http://127.0.0.1:8000/api/upload/',
-      URL_BACKEND_GET_LIST_REQUEST: 'http://127.0.0.1:8000/api/list/',
+      BASE_URL: 'https://hack.invest-open.ru',
+      CHAT_HISTORY_URL: "/chat/history",
+      CHAT_SEND_URL: "/message/send",
+      CHAT_LIST_DIALOGS_URL: '/chat/dialog',
+      LOGIN_URL: "/auth",
+      IS_TOKEN_VALID_URL: "/jwt/verify",
+      USER_INFO_URL: "/user/info",
+      // IS_TOKEN_VALID_URL_full: "https://hack.invest-open.ru/jwt/verify"
     }
   },
   getters: {
@@ -20,9 +23,8 @@ export default createStore({
   actions: {
   },
   modules: {
-    request_list,
-    request_detail,
     login,
-    request_create,
+    chat,
+    profile
   }
 })
