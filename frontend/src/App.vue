@@ -20,9 +20,9 @@
     height: 100%;
   }
 
-  #app{
-    background-color: #3CB5E8;
-  }
+  /*#app{*/
+  /*  background-color: #3CB5E8;*/
+  /*}*/
 
 </style>
 

@@ -1,40 +1,27 @@
 <template>
   <section class="login h-100">
-    <div class="container h-100">
-      <div class="row h-100  justify-content-center align-items-center p-0 ">
-        <div class="login__col col-4 bg-white border p-4">
-
-          <h3 class="login__header text-center mb-2">Вход</h3>
-          <form class="login__form">
-            <div class="login__form__email form-group my-2">
-              <label for="exampleInputEmail1">Username</label>
-              <input v-model="username" type="text" class="form-control" id="exampleInputEmail1"
-                     aria-describedby="emailHelp">
-            </div>
-            <div class="login__form__password form-group my-2">
-              <label for="exampleInputPassword1">Пароль</label>
-              <input v-model="password" type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button v-on:click.prevent="getLogin" class="login__button btn btn-primary w-100" type="submit">Войти
-            </button>
-
-          </form>
-<!--          <div class="my-2">-->
-<!--            <button v-on:click.prevent="isTokenValid" class="login__button btn btn-primary w-100" type="submit">-->
-<!--              Проверить валидность токена-->
-<!--            </button>-->
-<!--          </div>-->
-
-<!--          <div class="my-2">-->
-<!--            <button v-on:click.prevent="getUserInfo" class="login__button btn btn-primary w-100" type="submit">-->
-<!--              Проверить axios.default-->
-<!--            </button>-->
-<!--          </div>-->
-
+    <div class="container d-flex flex-column align-items-center justify-content-center h-100">
+        <div class="login__header text-center ">
+            ОТКРОЙСЯ НОВОМУ
         </div>
-      </div>
+
+        <div class="login__form w-100">
+            <div class="form__email form-group my-4">
+                <input v-model="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Логин">
+            </div>
+
+            <div class="form__password form-group my-4">
+                <input v-model="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+            </div>
+
+            <div class="login__button">
+                <button v-on:click.prevent="getLogin" class="button_item btn btn-primary w-100" type="submit">Войти</button>
+            </div>
+        </div>
+
     </div>
-  </section>
+
+</section>
 
 </template>
 
@@ -75,5 +62,31 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/css/login.css";
+    @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+    html, body {
+        height: 100%;
+    }
+
+    .login__header {
+        font-family: Oswald, serif;
+        color: white;
+        font-size: 72px;
+        width: 80%;
+    }
+
+    .login {
+        background-color: #3CB5E8;
+    }
+
+    .login__button {
+        margin-top: 80px;
+    }
+
+    .button_item{
+        background-color: #0275D8;
+        font-size: 32px;
+        font-family: Montserrat, sans-serif;
+    }
 </style>

@@ -1,0 +1,10 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+#    command: npm run serve
+    command: http-server dist
+    ports:
+      - "8080:8080"

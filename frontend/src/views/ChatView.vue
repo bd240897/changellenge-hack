@@ -1,28 +1,43 @@
 <template>
-  <div>
-    <h1>chat shitory</h1>
-    <div class="">
-      <div class="" v-for="msg in chatHistory"
-           v-bind:class="[ isMyMassage(msg.sender) ? 'text-right-my' : 'text-left-my']">
+  <section class="chat h-100">
+    <div class="container d-flex h-100 flex-column">
 
-        <!--      <div class="justify-content-center" >-->
-        {{ msg.text }}
-
-        <!--      </div>-->
+      <div v-on:click.prevent="goToProfile"  class="chat_name row align-items-center pt-3">
+        <div class="name__arrow col-2">
+          &lt;
+        </div>
+        <div class="name__username col-8">
+          Иванов Иван Иванович
+        </div>
+        <div class="name__img col-2">
+          <img class="name__img__item" src="../assets/img/mama.jpg">
+        </div>
       </div>
 
-      <form class="login__form">
-        <div>
-          <label for="exampleInputPassword1">Пароль</label>
-          <textarea v-model="massage" type="text" class="form-control" id="exampleInputPassword1" rows="3"></textarea>
+
+      <div class="chat_body d-flex flex-column align-items-start mt-5">
+        <div v-for="msg in chatHistory.reverse()" class="massage_item"
+             v-bind:class="[ isMyMassage(msg.sender) ? 'massage_item--client' : 'massage_item--expert']">
+          {{ msg.text }}
         </div>
-        <button v-on:click.prevent="sendNewMassage" class="login__button btn btn-primary w-100" type="submit">Отправить
-        </button>
-      </form>
-      <button v-on:click.prevent="getChatHistory({})" class="login__button btn btn-primary w-100" type="submit">123
-      </button>
+      </div>
+
+      <div class="chat_send pb-3">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-9 me-0 pe-0">
+              <textarea v-model="massage" class="form-control" id="exampleFormControlTextarea1" rows="1"
+                        placeholder="Напишите сообщение..."></textarea>
+
+            </div>
+            <div class="col-3 ms-0 ps-0">
+              <button v-on:click.prevent="sendNewMassage" class="button_item btn btn-primary w-100" type="submit">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -60,7 +75,10 @@ export default {
       }
       this.sendMassage({data: data_msg})
       this.massage = ''
-    }
+    },
+    goToProfile(){
+      this.$router.push({ name: 'ProfileView'})
+    },
 
   },
   created() {
@@ -74,14 +92,52 @@ export default {
 </script>
 
 <style scoped>
-.text-left-my {
-  /*color: white;*/
-  /*font-weight:bold;*/
-  background: white;
+.name__username, .name__arrow {
+  font-size: 14px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.text-right-my {
-  /*color: red;*/
-  background: gray;
+.name__img__item {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
 }
+
+.massage_item {
+  border-radius: 20px;
+  /*margin-top: 20px;*/
+  /*margin-bottom: 20px;*/
+  margin: 6px 0;
+  /*padding-top: 20px;*/
+  /*padding-bottom: 20px;*/
+  padding: 16px 10px;
+}
+
+.massage_item--client {
+  background: #D8F0FB;
+  align-self: end;
+}
+
+.massage_item--expert {
+  background: #3CB5E8;
+  align-self: start;
+}
+
+
+/* выравнивание чата */
+.chat_name {
+  flex: 0 0 auto;
+}
+
+.chat_body {
+  flex: 1 0 auto;
+}
+
+.chat_send {
+  /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+  flex: 0 0 auto;
+}
+
 </style>
