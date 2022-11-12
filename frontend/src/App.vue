@@ -1,4 +1,5 @@
 <template>
+<!--  <PageLoader />-->
   <nav>
     <router-link :to="{ name: 'Login'}">Login</router-link> |
     <router-link :to="{ name: 'ProfileView'}">ProfileView</router-link> |
@@ -20,16 +21,18 @@
   }
 
   #app{
-    background-color: #6BA3F6;
+    background-color: #3CB5E8;
   }
 
 </style>
 
 <script>
 import Menu from '@/components/Menu.vue';
+import PageLoader from './components/PageLoader'
 export default {
   name: 'App',
   components: {
+    PageLoader
   },
   created() {
   }
