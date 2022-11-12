@@ -13,6 +13,7 @@ export default createStore({
       LOGIN_URL: "/auth",
       IS_TOKEN_VALID_URL: "/jwt/verify",
       USER_INFO_URL: "/user/info",
+      SEND_MSG_URL: "/message/send"
       // IS_TOKEN_VALID_URL_full: "https://hack.invest-open.ru/jwt/verify"
     }
   },

@@ -215,7 +215,38 @@ function getUserInfo({url = USER_INFO_v2, userId = 100500}) {
 
     axios.get(url, {
         params: {userId: userId},
+    })
+        .then(function (x) {
+            console.log(x.data)
+            console.log('SUCCESS!!');
         })
+        .catch(err => {
+            console.log(err)
+            if (err.response) {
+                console.log("client received an error response (5xx, 4xx)")
+            } else if (err.request) {
+                console.log("client never received a response, or request never left")
+            } else {
+                console.log("anything else ")
+            }
+            return err
+        })
+}
+
+let data_msg = {
+    "message": {
+        "dialogId": 1,
+        "text": "Привет всем участникам Hack & Change!",
+        "messageType": "WIDGET",
+        "data": "{\"widget\":\"custom data\"}",
+        "mediaUrl": "https://cdn-icons-png.flaticon.com/512/945/945244.png"
+    }
+}
+
+function sendMassage({url = "/message/send", data=data_msg}) {
+    // получить список сообщений по id диалога
+
+    axios.post(url, data)
         .then(function (x) {
             console.log(x.data)
             console.log('SUCCESS!!');
@@ -240,5 +271,6 @@ function getUserInfo({url = USER_INFO_v2, userId = 100500}) {
 // sendMassage_v2({})
 // getDialogs({})
 // login({})
-tokenValid({})
+// tokenValid({})
 // getUserInfo({})
+// sendMassage({})

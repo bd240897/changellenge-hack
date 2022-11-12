@@ -5,7 +5,8 @@ export default ({
     namespaced: true,
     state() {
         return {
-            TOKEN: ""
+            TOKEN: "",
+            userId: "",
         }
     },
     getters: {},
@@ -13,6 +14,9 @@ export default ({
         SET_TOKEN(state, TOKEN) {
             state.TOKEN = TOKEN
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + TOKEN;
+        },
+        SET_USER_ID(state, userId) {
+            state.userId = userId
         },
     },
     actions: {
@@ -49,6 +53,7 @@ export default ({
                     console.log('SUCCESS!!');
 
                     commit('SET_TOKEN', x.data.jwtToken)
+                    commit('SET_USER_ID', x.data.userId)
                     router.push({ name: 'ProfileView'})
 
                 })

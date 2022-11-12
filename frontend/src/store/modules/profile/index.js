@@ -14,12 +14,13 @@ export default ({
         SET_USER_INFO(state, userInfo) {
             state.userInfo = userInfo
         },
+
         SET_ID_DIALOG(state, id_dialog) {
             state.id_dialog = parseInt(id_dialog)
         },
     },
     actions: {
-        getUserInfo({commit, rootState}, {url = this.state.USER_INFO_URL, userId = 100500}) {
+        getUserInfo({commit, rootState}, {url = this.state.USER_INFO_URL, userId = this.state.login.userId,}) {
             axios.get(url, {
                 params: {userId: userId},
             })
