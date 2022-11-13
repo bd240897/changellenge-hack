@@ -1,6 +1,8 @@
 # Проект на хакатон Hack&Change 2022
 **Трек 2: Открытие Инвестиции**
+
 Команда: Win+ners
+
 Ссылка на задание: https://drive.google.com/drive/folders/1GnO0WG_2_fXJ0HWqj4wYTZ_NgqAi1yIM
 
 ## Описание папок:
