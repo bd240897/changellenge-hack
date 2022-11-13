@@ -1,10 +1,25 @@
 # Проект на хакатон Hack&Change 2022
+**Трек 2: Открытие Инвестиции**
+Команда: Win+ners
+Ссылка на задание: https://drive.google.com/drive/folders/1GnO0WG_2_fXJ0HWqj4wYTZ_NgqAi1yIM
 
-### Трек 2: Открытие Инвестиции
+## Описание папок:
+### Frontend
 
-### Команда: Win+ners
+Нами был использовал `framefork` `vue.js` для создания чат платформы.
 
-## 1. Установка Docker (Ubuntu 20.04) 
+### html_templates
+
+Размеченые шаблоны страниц для нашего приложения находятся в этой папке.
+В задании был использован `bootstrap` framefork
+
+### Docker
+
+Для удобства запуска приложения на рзных платформах был использован `docker`. В папке `frontend` есть `dockerfile` который описывает состояние контейнера. Созданный контейнер будет оптравлен и развернут на удаленном сервере
+
+## Запуск приложения
+
+### 1. Установка Docker (Ubuntu 20.04) 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-ru
 
     sudo apt update
@@ -16,7 +31,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-o
     sudo apt install docker-ce
     sudo systemctl status docker // status
 
-## 2. Установка Docker-compose (Ubuntu 20.04)
+### 2. Установка Docker-compose (Ubuntu 20.04)
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-ru
 
     sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -24,14 +39,19 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-c
     docker-compose --version // status
 
 
-## 3. Запуск через Docker-compose
+### 3. Запуск через Docker-compose
 https://webdevblog.ru/kak-ispolzovat-django-postgresql-i-docker/
 
     git clone https://github.com/bd240897/changellenge-hack.git
     cd changellenge-hack/
     docker-compose -f docker-compose.dev.yml up --build
 
-# Точка вода
-    http://localhost:8080/
+##  Результат
+
+Проект доступен по ссылкам
+
+    http://win-plus-ners.ru:8080 (доступен на момент предоставления решения)
     # или
-    http://win-plus-ners.ru:8080
+    http://localhost:8080/ (доступен при создании локального проекта)
+   
+    
