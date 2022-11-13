@@ -26,7 +26,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-c
 
 ## 3. Запуск через Docker-compose
 https://webdevblog.ru/kak-ispolzovat-django-postgresql-i-docker/
-аш
+
     git clone https://github.com/bd240897/changellenge-hack.git
     cd changellenge-hack/
     docker-compose -f docker-compose.dev.yml up --build
