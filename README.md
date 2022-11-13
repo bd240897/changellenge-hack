@@ -4,6 +4,11 @@
 
 ### Команда: Win+ners
 
-#backend 
+# Установка
+    git clone https://github.com/bd240897/changellenge-hack.git
+    cd changellenge-hack/
+    docker-compose -f docker-compose.dev.yml up --build
 
-[Инструкция для бэкенда](./api/README.md)
+# Точка вода
+    http://localhost:8080/
+    http://win-plus-ners.ru:8080
