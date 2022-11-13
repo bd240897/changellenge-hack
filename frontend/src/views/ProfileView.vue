@@ -63,7 +63,7 @@
       </div>
 
       <div class="profile__bag flex-column mb-3">
-        <button class="bag__button_item btn btn-primary w-100" type="submit">Карточка эксперта</button>
+        <button v-on:click.prevent="goToExperts" class="bag__button_item btn btn-primary w-100" type="submit">Карточка эксперта</button>
       </div>
 
       <div class="profile__bag flex-column mb-3">
@@ -92,6 +92,9 @@ export default {
     ...mapActions('profile', ["getUserInfo", "getIdDialog"]),
     goToChat() {
       this.$router.push({name: 'ChatView'})
+    },
+    goToExperts() {
+      this.$router.push({name: 'ListExpertsView'})
     },
   },
   created() {

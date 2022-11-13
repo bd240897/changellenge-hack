@@ -52,7 +52,7 @@ https://webdevblog.ru/kak-ispolzovat-django-postgresql-i-docker/
 
 Проект доступен по ссылкам
 
-    http://win-plus-ners.ru:8080 (доступен на момент предоставления решения)
+    http://win-plus-ners.ru:80 (доступен на момент предоставления решения)
     # или
     http://localhost:8080/ (доступен при создании локального проекта)
    

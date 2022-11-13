@@ -3,6 +3,7 @@ import Login from '../views/Login.vue'
 import TestView from "../views/TestView";
 import ProfileView from "@/views/ProfileView";
 import ChatView from "@/views/ChatView";
+import ListExpertsView from "@/views/ListExpertsView";
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: '/profile',
     name: 'ProfileView',
     component: ProfileView
+  },
+      {
+    path: '/experts',
+    name: 'ListExpertsView',
+    component: ListExpertsView
   },
   {
     path: '/chat',
