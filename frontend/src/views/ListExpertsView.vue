@@ -94,9 +94,11 @@ export default {
   },
   methods: {
     goToChat() {
+      // переход в чат
       this.$router.push({name: 'ChatView'})
     },
     scrollToTop() {
+      // при открытии страницы пролистывание вверх
       window.scrollTo(0, 0);
     }
   },

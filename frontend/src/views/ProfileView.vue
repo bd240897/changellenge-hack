@@ -1,6 +1,6 @@
 <template>
   <section class="">
-    <div class="container ">
+    <div class="container">
 
       <div class="profile d-flex flex-column">
 
@@ -91,9 +91,11 @@ export default {
   methods: {
     ...mapActions('profile', ["getUserInfo", "getIdDialog"]),
     goToChat() {
+      // перейти в чат
       this.$router.push({name: 'ChatView'})
     },
     goToExperts() {
+      // перейти на страницу экспертов
       this.$router.push({name: 'ListExpertsView'})
     },
   },

@@ -57,9 +57,11 @@ export default {
   methods: {
     ...mapActions('chat', ['getChatHistory', 'sendMassage']),
     isMyMassage(id) {
+      // проверяет являюсь ли я автором сообщения по id
       return parseInt(id) === this.userInfo.userId
     },
     sendNewMassage() {
+      // отправляет сообщение
       let data_msg = {
         "message": {
           "dialogId": this.id_dialog,
@@ -73,6 +75,7 @@ export default {
       this.massage = ''
     },
     goToProfile(){
+      // переход в профиль
       this.$router.push({ name: 'ProfileView'})
     },
 

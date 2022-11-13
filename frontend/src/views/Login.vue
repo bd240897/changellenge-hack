@@ -41,18 +41,15 @@ export default {
   methods: {
     ...mapActions('login', ['isTokenValid', "login",]),
     hash(string) {
+      // получение хеша от пароля
       return CryptoJS.SHA256(string).toString(CryptoJS.enc.hex);
     },
     getLogin() {
-            // TODO
+      // залогиниться
       let data_login = {
         "login": this.username,
         "password": this.hash(this.password)
       }
-      // let data_login_global = {
-      //   "login": "testUser",
-      //   "password": "872e4e50ce9990d8b041330c47c9ddd11bec6b503ae9386a99da8584e9bb12c4"
-      // }
       this.login({data: data_login})
     },
   },
