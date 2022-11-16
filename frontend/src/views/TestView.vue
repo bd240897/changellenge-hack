@@ -1,44 +1,18 @@
 <template>
-  <div v-if="!isMobile">
-<!--    <desktop/>-->
-      desktop
-  </div>
-  <div v-else>
-<!--    <mobile/>-->
-      mobile
-  </div>
-  {{isMobile}}
-<!--  another aproach -->
-<!--  <production-list v-if="!isMobile()"></production-list>-->
-<!--  <production-list-mobile v-else></production-list-mobile>-->
+  <h1>TestView</h1>
 </template>
 
 <script>
 export default {
-  name: 'HeaderComponent',
-  data() {
-    return {
-      width: 0,
-    }
-  },
-  created() {
-    window.addEventListener('resize', this.updateWidth);
-  },
-  methods: {
-    updateWidth() {
-      this.width = window.innerWidth;
-    },
-
-  },
-  computed: {
-    isMobile() {
-      return this.width <= 760;
-    },
-  }
+  name: "TestView"
 }
+
+import { io } from "socket.io-client";
+const socket = io("https://server-domain.com");
+
+
 </script>
 
 <style scoped>
-
 
 </style>
